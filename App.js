@@ -13,6 +13,7 @@ const reducer = (state,action) =>{
   let newState = [];
 
   switch(action.type){
+
     case 'INIT' : {
       return action.data;
     }
@@ -35,7 +36,7 @@ const reducer = (state,action) =>{
   return newState;
 };
 
-export const DiaryStateContext = React.createContext();
+export const DiaryStateContext = React.createContext(); 
 export const DiaryDispatchContext = React.createContext();
 
 const dummyData = [
@@ -43,31 +44,37 @@ const dummyData = [
     id: 1,
     emotion: 1,
     content: "오늘의 일기 1번",
-    date: 1677478708592,
+    date: 1677676808945,
   },
   {
     id: 2,
     emotion: 2,
     content: "오늘의 일기 2번",
-    date: 1677478708593,
+    date: 1677676808944,
   },
   {
     id: 3,
     emotion: 3,
     content: "오늘의 일기 3번",
-    date: 1677478708594,
+    date: 1677676808943,
   },
   {
     id: 4,
     emotion: 4,
     content: "오늘의 일기 4번",
-    date: 1677478708595,
+    date: 1677676808942,
   },
   {
     id: 5,
     emotion: 5,
     content: "오늘의 일기 5번",
-    date: 1677478708596,
+    date: 1677676808941,
+  },
+  {
+    id: 6,
+    emotion: 2,
+    content: "오늘의 일기 5번",
+    date: 1777478708596,
   },
 ]
 function App() {
