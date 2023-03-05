@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MyHeader from "./MyHeader";
@@ -41,7 +41,7 @@ const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
 };
 
-const DiaryEditor = () => {
+const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
   const [content, setContent] = useState("");
   const [emotion, setEmotion] = useState(3);
@@ -62,6 +62,10 @@ const DiaryEditor = () => {
     onCreate(date, content, emotion);
     navigate("/", { replace: true });
   };
+
+  // useEffect(() => {
+  //   setDate(getStringDate(new Date(parseInt(originData.date)));
+  // }, [isEdit, originData]);
 
   return (
     <div className="DiaryEditor">
