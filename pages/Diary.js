@@ -30,7 +30,11 @@ const Diary = () => {
   if (!data) {
     return <div className="DiaryPage">로딩중입니다....</div>;
   } else {
-    const curEmotionData = emotionList.find((it) => parseInt(data.emotion));
+    console.log(data.emotion);
+
+    const curEmotionData = emotionList.find(
+      (it) => it.emotion_id == parseInt(data.emotion)
+    );
     console.log(curEmotionData);
 
     return (
@@ -61,12 +65,12 @@ const Diary = () => {
                 {curEmotionData.emotion_descript}
               </div>
             </div>
-          </section>
-          <section>
-            <h4>오늘의 일기</h4>
-            <div className="diary_content_wrapper">
-              <p>{data.content}</p>
-            </div>
+            <section>
+              <h4>오늘의 일기</h4>
+              <div className="diary_content_wrapper">
+                <p>{data.content}</p>
+              </div>
+            </section>
           </section>
         </article>
       </div>
